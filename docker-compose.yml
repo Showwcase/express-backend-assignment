@@ -1,13 +1,9 @@
-version: '3'
-
+version: '3.8'
 services:
-  db:
-    image: postgres:latest
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
     ports:
-      - '5432:5432'
-    environment:
-      - POSTGRES_USER=your_username
-      - POSTGRES_PASSWORD=your_password
-      - POSTGRES_DB=your_database_name
+      - "27017:27017"
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./data:/data/db
